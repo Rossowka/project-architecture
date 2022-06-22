@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 
 import colors from '../../colors';
 import { EmployeeData } from '../Employees';
@@ -27,21 +27,33 @@ function Employees() {
         },
         additional: {
             textAlign: 'center',
-            width: 200
+            width: 200,
+            height: 120
         }
     };
+
+    const [showData, setShowData ] = useState(false);
+
+    let handleClick = () => {
+        setShowData(showData => !showData)
+    }
 
     return (
         <div style={styles.container}>
             {EmployeeData.map(elem => {
                 return (
                     <div key={`employee-${elem.id}`} style={styles.wrapper}>
-                        <div style={styles.employee}>
+                        <div style={styles.employee} onClick={handleClick}>
                             <p>{elem.name} {elem.surname}</p>
                         </div>
                         <div style={styles.additional}>
-                            <p>{elem.position}</p>
-                            <p>Since: {elem.since}</p>
+                            { showData &&
+                            <>
+                                <p>Age: {elem.age}</p>
+                                <p>Position: {elem.position}</p>
+                                <p>Salary: {elem.salary}</p>
+                            </>
+                            }
                         </div>
                     </div>
                 );

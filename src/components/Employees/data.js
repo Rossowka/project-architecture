@@ -4,28 +4,32 @@ const EmployeeData = [
         name: 'Harry',
         surname: 'Potter',
         position: 'Team Lead',
-        since: 2020,
+        age: 25,
+        salary: '€70,000'
     },
     {
         id: 2,
         name: 'Hermine',
         surname: 'Granger',
         position: 'Senior Developer',
-        since: 2015,
+        age: 30,
+        salary: '€90,000'
     },
     {
         id: 3,
         name: 'Ron',
         surname: 'Weasley',
         position: 'Junior Developer',
-        since: 2021,
+        age: 28,
+        salary: '€50,000'
     },
     {
         id: 4,
         name: 'Neville',
         surname: 'Longbottom',
         position: 'Intern',
-        since: 2022,
+        age: 42,
+        salary: '€20,000'
     },
 ];
 
